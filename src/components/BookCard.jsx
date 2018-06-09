@@ -1,10 +1,11 @@
 import React from 'react'
 import { Card, Icon, Image, Button } from 'semantic-ui-react'
-import '../menu.css';
+
+
 
 
     const BookCard = book =>{
-        const {title, authors, price, image, addToCart, addedCount, pages, categories, shipping}=book;
+        const {title, authors, price, image, addToCart, addedCount, pages, categories, shipping} = book;
         return(
         <Card>
     <Image src={image}/>
@@ -30,8 +31,6 @@ import '../menu.css';
         <Icon name='shipping fast' />
         </span>
       </a>
-      
-      
       <span class="right floated">
       <span data-tooltip={categories} data-position="top center">
       <a>
@@ -40,15 +39,12 @@ import '../menu.css';
       </a>
       </span>
      </span>
-
     </Card.Content>
-
     <Button  onClick={addToCart.bind(this, book)}>
     Add in the cart {addedCount > 0 && `(${addedCount})`}
     </Button> 
- 
   </Card>
-  
-      ); 
+      );  
     };
+    
 export default BookCard;

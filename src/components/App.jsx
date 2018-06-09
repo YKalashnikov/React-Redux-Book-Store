@@ -6,15 +6,12 @@ import Menu from '../containers/Menu';
 import  Filter  from '../containers/Filter';
 import { Card } from 'semantic-ui-react'
 
-
-
 class App extends Component {
 
   componentWillMount() {
     const { setBooks } = this.props;
     axios.get('/books.json').then(({data})=> {
       setBooks(data);
-    
     }).catch ((error)=> {
       console.log(error)
     })
@@ -25,14 +22,13 @@ const { books, isLoading } = this.props;
       <Container>
         <Menu/>
         <Filter/>
+        
         <Card.Group itemsPerRow={4}>
         { !isLoading 
         ? 
-   
         <div class="ui active inverted dimmer">
         <div class="ui large text loader">Loading...</div>
         </div>
-
         : books.map((book, index) => (
            <BookCard id={index} key={index} {...book} />
            ))}

@@ -3,11 +3,20 @@ import { bindActionCreators} from 'redux';
 import * as cartActions from '../actions/cart';
 import Menu from '../components/Menu';
 import uniqBy from 'lodash/uniqBy';
+import BookCard from '../components/BookCard';
 
-const mapStateToProps = ({ cart })=>({
+
+
+
+const mapStateToProps = ({ cart }, { id } )=>({
     totalPrice: cart.items.reduce((total, book) => total + book.price, 0 ),
     count: cart.items.length,
     items: uniqBy(cart.items, o => o.id),
+   
+  
+   
+ 
+  
   });
   
   const mapDispatchToProps = dispatch=> ({
