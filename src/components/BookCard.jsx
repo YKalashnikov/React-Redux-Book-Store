@@ -1,14 +1,12 @@
 import React from 'react'
-import { Card, Icon, Image, Button } from 'semantic-ui-react'
-
-
-
+import { Card, Icon, Image, Button, Rating, Grid, Label } from 'semantic-ui-react'
 
     const BookCard = book =>{
-        const {title, authors, price, image, addToCart, addedCount, pages, categories, shipping} = book;
+        const {title, authors, price, image, addToCart, addedCount, pages, categories, shipping, rating} = book;
         return(
-        <Card>
-    <Image src={image}/>
+        <Card >
+         
+    <Image src={image} />
     <Card.Content>
       <Card.Header >
         {title}
@@ -17,7 +15,7 @@ import { Card, Icon, Image, Button } from 'semantic-ui-react'
       <Card.Meta>
           {authors}
       </Card.Meta>
-     
+      
     </Card.Content>
     <Card.Content extra >
       <a>
@@ -36,14 +34,46 @@ import { Card, Icon, Image, Button } from 'semantic-ui-react'
       <a>
         <Icon name='pencil alternate' />
         {pages}
+        
       </a>
+      
       </span>
      </span>
+     
     </Card.Content>
-    <Button  onClick={addToCart.bind(this, book)}>
-    Add in the cart {addedCount > 0 && `(${addedCount})`}
-    </Button> 
-  </Card>
+   
+    <Card.Content extra>
+    <Grid divided>
+        <Grid.Row stretched>
+        <Grid.Column width={addedCount && 12}>
+        
+            <Button
+              onClick={addToCart.bind(this, book)}
+              content="Add in the cart"
+              color={addedCount ? 'green' : 'green'}
+              basic={!!addedCount}
+              fluid
+            />
+          </Grid.Column>
+          {addedCount > 0 && ( 
+           <Grid.Column width={4}>
+              <Label color="green"><h3>{addedCount}</h3></Label>
+            </Grid.Column>
+          )}
+        </Grid.Row>
+        
+      </Grid>
+      </Card.Content>
+      <div>
+      
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Rating icon="star" rating={rating}  maxRating={5} />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><a>customer reviews</a></b>
+        
+      </div>
+  
+    </Card>
+    
+     
       );  
     };
     

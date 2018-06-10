@@ -1,11 +1,11 @@
 import React from 'react'
 import CartPop from '../containers/CartPop.js'
-import { Menu, List, Popup, Button, Image, Icon } from'semantic-ui-react'
+import { Menu, List, Popup, Button, Image, Icon, Label } from'semantic-ui-react'
 
  const  TopMenu =({totalPrice,count, items, addedCountInCart}) => (
          <Menu>
         <Menu.Item>
-        <div className='nameStore'> Book Store ReactJs + Redux </div>  
+        <div className='nameStore'> Book Store ReactJs + Redux </div> 
         {addedCountInCart}
         </Menu.Item>
         <Menu.Menu position='right'>
@@ -15,14 +15,16 @@ import { Menu, List, Popup, Button, Image, Icon } from'semantic-ui-react'
           <Popup
           trigger={
           <Menu.Item>
-           Cart: &nbsp; <b>{count}</b>
+           Cart: &nbsp;
+            <Label color={count ? 'teal' : 'grey'}>{count}
+            </Label>
           </Menu.Item>
           }
           content ={items.map(book =>
             <CartPop  {...book}
            />)}
          on='click'
-         hideOnScroll
+         
           />
         </Menu.Menu>
       </Menu>  
