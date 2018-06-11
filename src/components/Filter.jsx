@@ -24,6 +24,12 @@ const Filter = ({setFilter, filterBy, searchQuery, setSearchQuery}) => {
      active={filterBy === 'author'}
      onClick={setFilter.bind(this, 'author')} >Author
      </Menu.Item>
+
+     <Menu.Item 
+     active={filterBy === 'rating' }
+     onClick={setFilter.bind(this, 'rating')}>Rating
+     </Menu.Item>&nbsp;&nbsp;
+
      <Input icon='search' onChange={e => setSearchQuery(e.target.value)} value={searchQuery} placeholder='Search for a book...'></Input>
     <Menu.Menu position='right'>
     </Menu.Menu>

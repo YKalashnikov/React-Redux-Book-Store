@@ -13,7 +13,9 @@ const sortBy = (books, filterBy) =>{
     case 'price_low':
         return orderBy(books,'price', 'ads' )
     case 'author':
-    return orderBy(books, 'authors', 'ads')      
+    return orderBy(books, 'authors', 'ads')     
+    case 'rating' :
+    return orderBy(books, 'rating', 'desc') 
        default: 
        return books;
        

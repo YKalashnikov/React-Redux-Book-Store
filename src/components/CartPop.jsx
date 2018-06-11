@@ -1,5 +1,5 @@
 import React from 'react'
-import  { Menu, List, Popup, Segment, Button, Image, Icon, Label, Rating } from'semantic-ui-react';
+import  { List, Image, Rating } from'semantic-ui-react';
 
 
 const CartPop = ({title, id, image, removeFromCart, price, addedCountInCart, addToCart, count, items, book, addedCount, rating, countRating, totalPrice}) =>{

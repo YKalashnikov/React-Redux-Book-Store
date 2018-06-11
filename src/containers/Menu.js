@@ -3,7 +3,7 @@ import { bindActionCreators} from 'redux';
 import * as cartActions from '../actions/cart';
 import Menu from '../components/Menu';
 import uniqBy from 'lodash/uniqBy';
-import BookCard from '../components/BookCard';
+
 
 
 

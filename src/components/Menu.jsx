@@ -1,6 +1,6 @@
 import React from 'react'
 import CartPop from '../containers/CartPop.js'
-import { Menu, List, Popup, Button, Image, Icon, Label } from'semantic-ui-react'
+import { Menu, Popup, Label } from'semantic-ui-react'
 
  const  TopMenu =({totalPrice,count, items, addedCountInCart}) => (
          <Menu>
