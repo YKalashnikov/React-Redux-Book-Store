@@ -9,7 +9,6 @@ const mapStateToProps = ({ cart }, { id }) => ({
    count + (book.id === id ? 1 : 0 ),   
    0,
  ),
-
   });
   const mapDispatchToProps = dispatch=> ({
       ...bindActionCreators(cartActions, dispatch)

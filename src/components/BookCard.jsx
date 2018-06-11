@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Icon, Image, Button, Rating, Grid, Label } from 'semantic-ui-react'
 
     const BookCard = book =>{
-        const {title, authors, price, image, addToCart, addedCount, pages, categories, shipping, rating, countRating} = book;
+        const {title, authors, price, image, addToCart, addedCount, pages, categories, shipping, rating, countRating, toEuro} = book;
         return(
         <Card >
          
@@ -18,9 +18,16 @@ import { Card, Icon, Image, Button, Rating, Grid, Label } from 'semantic-ui-reac
       
     </Card.Content>
     <Card.Content extra >
-      <a>
+      <a>  
+        <span data-tooltip= 
+        {`€`+' '+(Math.floor(price * 0.85))} data-position="top center"> 
+
+        <a>
         <Icon name='dollar' />
         {price}
+        
+      </a>
+      </span>
       </a>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a> 
@@ -68,13 +75,12 @@ import { Card, Icon, Image, Button, Rating, Grid, Label } from 'semantic-ui-reac
       
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Rating icon="star" rating={rating}  maxRating={5} />&nbsp;&nbsp;({countRating})&nbsp;&nbsp;&nbsp;
         <b><a>customer reviews</a></b>
-        
       </div>
-  
     </Card>
     
      
-      );  
+      ); 
+       
     };
-    
+ 
 export default BookCard;

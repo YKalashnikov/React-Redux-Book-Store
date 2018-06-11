@@ -4,8 +4,7 @@ import  { List, Image, Rating } from'semantic-ui-react';
 
 const CartPop = ({title, id, image, removeFromCart, price, addedCountInCart, addToCart, count, items, book, addedCount, rating, countRating, totalPrice}) =>{
     return(
-
-    <List  divided verticalAlign='middle'>
+    <List  divided verticalAlign='middle'   >
     <List.Item>
       <Image avatar src={image} />
       <br></br>
@@ -46,7 +45,7 @@ const CartPop = ({title, id, image, removeFromCart, price, addedCountInCart, add
 
 
 export default CartPop;
-//style={{'font-size':12}}
+
 
 
 
