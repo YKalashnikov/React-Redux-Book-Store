@@ -9,7 +9,11 @@ const mapStateToProps = ({ cart }, { id }) => ({
    count + (book.id === id ? 1 : 0 ),   
    0,
  ),
+ totalPrice: cart.items.reduce((total, book) => total + book.price, 0 ),
+    count: cart.items.length,
+    
   });
+  
 
   const mapDispatchToProps = dispatch=> ({
       ...bindActionCreators(cartActions, dispatch)
