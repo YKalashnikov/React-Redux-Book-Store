@@ -1,5 +1,6 @@
 <h1>What it is ???</h1>
-It is an online book store, created with ReactJS, Redux, using semanticui
+It is an online book store, created with ReactJS, Redux, using semanticui.
+Work is still in progress.....I am going to add gignup, login form, validation, authentication
 
 <h1>Why???</h1>
 I just decided to learn Redux and one of the best things to learn anything is to practise, so decided to make a simple project 
