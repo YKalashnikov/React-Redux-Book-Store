@@ -8,14 +8,11 @@ import { Card } from 'semantic-ui-react'
 
 class App extends Component {
 
-  componentWillMount() {
-    const { setBooks } = this.props;
-    axios.get('/books.json').then(({data})=> {
-      setBooks(data);
-    }).catch ((error)=> {
-      console.log(error)
-    })
-  }
+    componentDidMount() {
+      const { fetchBooks } = this.props;
+      fetchBooks();
+    }
+  
   render() {
 const { books, isLoading } = this.props;
     return (
